@@ -51,11 +51,9 @@ class ProductsController extends Controller
         $data = $request->except(['_token']);
 
         if ($row = $this->repository->create($data)) {
-//            flash()->success(trans('app.Created successfully'));
-            return redirect( '/' . $this->module );
+            return redirect( '/' . $this->module )->with('success','app.Created successfully');
         }
-//        flash()->error(trans('app.failed to save'));
-        return back();
+        return back()->with('error','app.failed to save');
     }
 
 
@@ -70,8 +68,7 @@ class ProductsController extends Controller
     public function postEdit(UpdateProductsRequest $request , $id) {
         $row = $this->repository->findOrFail($id);
         if ($row->update($request->except(['_token','_method']))) {
-//            flash(trans('app.Update successfully'))->success();
-            return redirect( '/' . $this->module );
+            return redirect( '/' . $this->module )->with('success','app.Update successfully');
         }
     }
 
@@ -79,8 +76,7 @@ class ProductsController extends Controller
     {
         $row = $this->repository->findOrFail($id);
         $row->delete();
-//        flash()->success(trans('app.Deleted Successfully'));
-        return back();
+        return back()->with('success','app.Deleted successfully');
     }
 
 }

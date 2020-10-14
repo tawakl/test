@@ -14,29 +14,33 @@
 
         <div class="container bg-white">
 
-        @if(count($rows))
-            <div class="table-responsive">
-                <table class="table display responsive nowrap">
-                    <thead>
-                    <tr>
-                        <th class="text-center">#</th>
-                        <th class="text-center">Name</th>
-                        <th class="text-center">Description</th>
-                        <th class="text-center">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($rows as $row)
-                        <tr class="text-center">
-                            <td>{{$row->id}}</td>
-                            <td>{{$row->title}}</td>
-                            <td>{!! $row->description !!}</td>
-                            <td class="center">
+            @if(count($rows))
+                <div class="table-responsive">
+                    <table class="table display responsive nowrap">
+                        <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Number Of Products</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($rows as $row)
+                            <tr class="text-center">
+                                <td>{{$row->id}}</td>
+                                <td>{{$row->title}}</td>
+                                <td>{!! $row->description !!}</td>
+                                <td>
+                                    {{trans_choice('app.product', $row->product_count)}}
+                                </td>
+                                <td class="center">
 
-                                @if(request('deleted') != 'yes')
-                                    <a class="btn btn-success btn-xs" href="{{$module}}/edit/{{$row->id}}" title="{{trans('categories.Edit')}}">
-                                        <i class="fa fa-edit"></i>
-                                    </a>
+                                    @if(request('deleted') != 'yes')
+                                        <a class="btn btn-success btn-xs" href="{{$module}}/edit/{{$row->id}}" title="{{trans('categories.Edit')}}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                         <form  class="d-inline" method="POST" action="{{route('categories.delete' , $row->id)}}">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
@@ -45,21 +49,21 @@
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
                                         </form>
-                                @endif
-                            </td>
+                                    @endif
+                                </td>
 
-                        </tr>
-                    @endforeach
-                    </tbody>
+                            </tr>
+                        @endforeach
+                        </tbody>
 
-                </table>
-            </div>
-            {{ $rows->links() }}
-        @else
-            <br>
+                    </table>
+                </div>
+                {{ $rows->links() }}
+            @else
+                <br>
                 <p class="text-center text-bold"> {{trans("users.There is no results")}}</p>
 
-        @endif
+            @endif
         </div>
     </section>
 

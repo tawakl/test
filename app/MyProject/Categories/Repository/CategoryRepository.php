@@ -16,7 +16,7 @@ class CategoryRepository implements CategoryRepositoryInterface
     }
     public function all()
     {
-        return $this->model->getData()->latest()->paginate();
+        return $this->model->withcount('product')->paginate();
     }
     public function findOrFail($id)
     {

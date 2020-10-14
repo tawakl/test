@@ -23,7 +23,7 @@
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-{{--    @include('flash::message')--}}
+    @include('form.flash')
 
     <!-- Content Header (Page header) -->
         <div class="content-header">
