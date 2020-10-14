@@ -40,6 +40,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item has-treeview menu-open">
+                    <a href="{{ route('products') }}" class="nav-link ">
+                        <i class="fas fa-list p-2"></i>
+                        <p>
+                            {{trans('navigation.products')}}
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

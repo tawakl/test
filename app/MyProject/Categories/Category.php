@@ -4,7 +4,7 @@ namespace App\MyProject\Categories;
 
 
 use App\MyProject\BaseApp\BaseModel;
-use App\MyProject\Posts\Post;
+use App\MyProject\Products\Product;
 
 class Category extends BaseModel
 {
@@ -18,10 +18,10 @@ class Category extends BaseModel
 
 
 
-//    public function product()
-//    {
-//        return $this->hasMany(Product::class);
-//    }
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
 
 
 
