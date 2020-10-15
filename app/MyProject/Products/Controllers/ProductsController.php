@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\MyProject\Products\Product;
 use App\MyProject\Products\Repository\ProductRepositoryInterface;
 use App\MyProject\Products\Requests\CreateProductsRequest;
+use App\MyProject\Products\Requests\ProductsRequest;
 use App\MyProject\Products\Requests\UpdateProductsRequest;
 
 
@@ -45,7 +46,7 @@ class ProductsController extends Controller
 
     }
 
-    public function postCreate(CreateProductsRequest $request)
+    public function postCreate(ProductsRequest $request)
     {
         $data['module'] = $this->module;
         $data = $request->except(['_token']);
@@ -65,7 +66,7 @@ class ProductsController extends Controller
         return view('admin.'.$this->module . '.edit', $data);
     }
 
-    public function postEdit(UpdateProductsRequest $request , $id) {
+    public function postEdit(ProductsRequest $request , $id) {
         $row = $this->repository->findOrFail($id);
         if ($row->update($request->except(['_token','_method']))) {
             return redirect( '/' . $this->module )->with('success','app.Update successfully');

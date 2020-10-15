@@ -3,8 +3,7 @@
 namespace App\MyProject\Categories\Controllers;
 use App\MyProject\Categories\Category;
 use App\MyProject\Categories\Repository\CategoryRepositoryInterface;
-use App\MyProject\Categories\Requests\CreateCategoriesRequest;
-use App\MyProject\Categories\Requests\UpdateCategoriesRequest;
+use App\MyProject\Categories\Requests\CategoriesRequest;
 use App\Http\Controllers\Controller;
 
 
@@ -41,7 +40,7 @@ class CategoriesController extends Controller
 
     }
 
-    public function postCreate(CreateCategoriesRequest $request)
+    public function postCreate(CategoriesRequest $request)
     {
         $data['module'] = $this->module;
         $data = $request->except(['_token']);
@@ -61,7 +60,7 @@ class CategoriesController extends Controller
         return view('admin.'.$this->module . '.edit', $data);
     }
 
-    public function postEdit(UpdateCategoriesRequest $request , $id) {
+    public function postEdit(CategoriesRequest $request , $id) {
         $row = $this->repository->findOrFail($id);
         if ($row->update($request->except(['_token','_method']))) {
             return redirect( '/' . $this->module )->with('success','app.Update successfully');
