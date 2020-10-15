@@ -17,7 +17,7 @@ class ProductRepository implements ProductRepositoryInterface
     }
     public function all()
     {
-        return $this->model->getData()->latest()->paginate();
+        return $this->model->getData()->orderBy('id','DESC')->paginate();
     }
     public function findOrFail($id)
     {
