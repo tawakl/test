@@ -50,9 +50,9 @@
                                 </div>
                                 <div class="col-md-6 col-lg-6 col-xl-4 d-flex">
                                     <div class="text w-100 pl-md-3">
-                                        <h3> Category : <span class="subheading">{{$product->category->title}}</span></h3>
+                                        <h1> Category : <span class="subheading">{{$product->category->title}}</span></h1>
                                         <h2> Product : {{$product->title}}</h2>
-                                        <h2> Quantity : {{$product->quantity}} => {{trans_choice('app.quantity', $product->quantity)}}</h2>
+                                        <h3> Quantity : {{$product->quantity}} => {{trans_choice('app.quantity', $product->quantity)}}</h3>
                                         *******************************************************************
                                     </div>
                                 </div>

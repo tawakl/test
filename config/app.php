@@ -170,12 +170,14 @@ return [
          * Application Service Providers...
          */
         App\MyProject\BaseApp\Providers\RepositoriesServiceProvider::class,
+        App\MyProject\BaseApp\Providers\UseCasesServiceProvider::class,
 
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -228,6 +230,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'DocumentFactory' => \Swis\JsonApi\Client\Facades\DocumentFactoryFacade::class,
+        'DocumentParser' => \Swis\JsonApi\Client\Facades\DocumentParserFacade::class,
+        'ItemHydrator' => \Swis\JsonApi\Client\Facades\ItemHydratorFacade::class,
+        'ResponseParser' => \Swis\JsonApi\Client\Facades\ResponseParserFacade::class,
+        'TypeMapper' => \Swis\JsonApi\Client\Facades\TypeMapperFacade::class,
 
     ],
 

@@ -9,13 +9,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
+        "ashrafhefny/json-api-client": "^0.7.5",
+        "art4/json-api-client": "^0.10.0",
         "almasaeed2010/adminlte": "~2.4",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.0",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "spatie/laravel-fractal": "^5.8",
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
@@ -43,7 +46,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Swis\\JsonApi\\Client\\": "vendor/AshrafHefny/json-api-client/src/"
+
         }
     },
     "minimum-stability": "dev",
@@ -59,5 +64,20 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "repositories": {
+        "json-api-client": {
+            "type": "package",
+            "package": {
+                "name": "AshrafHefny/json-api-client",
+                "description": "A PHP package for mapping remote jsonapi resources to Eloquent like models and collections.",
+                "version": "0.7.5",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/AshrafHefny/json-api-client",
+                    "reference": "master"
+                }
+            }
+        }
     }
 }
