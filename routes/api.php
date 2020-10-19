@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 //});
 
 require base_path('app/MyProject/Categories/Routes/api.php');
+require base_path('app/MyProject/Products/Routes/api.php');

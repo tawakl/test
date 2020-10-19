@@ -14,11 +14,9 @@ class CategoriesListTransformer extends TransformerAbstract
     protected $availableIncludes = [
     ];
 
-    protected $params;
 
-    public function __construct($params = [])
+    public function __construct()
     {
-        $this->params = $params;
     }
 
     public function transform(Category $category)
