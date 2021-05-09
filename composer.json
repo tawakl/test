@@ -9,16 +9,17 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
-        "ashrafhefny/json-api-client": "^0.7.5",
-        "art4/json-api-client": "^0.10.0",
         "almasaeed2010/adminlte": "~2.4",
+        "art4/json-api-client": "^0.10.0",
+        "ashrafhefny/json-api-client": "^0.7.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
+        "laravel/ui": "^3.2",
         "laravelcollective/html": "^6.2",
-        "spatie/laravel-fractal": "^5.8",
+        "spatie/laravel-fractal": "^5.8"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

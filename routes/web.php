@@ -17,8 +17,13 @@ Route::get('/dashboard', function () {
     return view('admin.layouts.master');
 });
 
-Route::get('/', '\App\MyProject\Front\Controllers\FrontController@getIndex')->name('front');
+//Route::get('/', '\App\MyProject\Front\Controllers\FrontController@getIndex')->name('front');
 
 require base_path('app/MyProject/Categories/Routes/web.php');
 require base_path('app/MyProject/Products/Routes/web.php');
 
+
+Auth::routes();
+Route::get('/',[App\Http\Controllers\InvoiceController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

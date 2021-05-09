@@ -12,7 +12,7 @@ class FrontController extends Controller {
     public $category;
 
     public function __construct(Product $product,Category $category) {
-        $this->module='front.home';
+        $this->module='frontend.index';
         $this->product = $product;
         $this->category = $category;
 
@@ -20,8 +20,8 @@ class FrontController extends Controller {
 
     public function getIndex() {
         $data = [];
-        $data['products']= $this->product->all();
-        $data['categories']= $this->category->all();
+//        $data['products']= $this->product->all();
+//        $data['categories']= $this->category->all();
         return view($this->module, $data);
     }
 

@@ -23,6 +23,7 @@ class ProductsRequest extends FormRequest
      */
     public function rules()
     {
+        dd($this->request->get('data'));
         return [
             'title' => 'required|max:250',
             'description' => 'required'

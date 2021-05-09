@@ -6,6 +6,7 @@ namespace App\MyProject\Products\Controllers\Api;
 use App\MyProject\BaseApp\Api\BaseApiController;
 use App\MyProject\Products\Product;
 use App\MyProject\Products\Repository\ProductRepositoryInterface;
+use App\MyProject\Products\Requests\ProductsRequest;
 use App\MyProject\Products\Transformers\ProductsListTransformer;
 use App\MyProject\Products\Transformers\ProductTransformer;
 use App\MyProject\Products\UseCases\ProductUseCase\ProductUseCaseInterface;
@@ -54,7 +55,7 @@ class ProductsApiController extends BaseApiController
         }
     }
 
-    public function createProduct(Request $request)
+    public function createProduct(ProductsRequest $request)
     {
         $data = $request->getContent();
         $data = $this->parserInterface->deserialize($data);
